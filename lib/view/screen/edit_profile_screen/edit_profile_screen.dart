@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:project/controller/edit_profile_screen_controller/edit_profile_screen_controller.dart';
 import 'package:project/core/constant/app_photo.dart';
-import 'package:project/core/constant/handeldataview.dart';
 import 'package:project/view/widget/edit_profile_screen_widget/image_list_area.dart';
 import 'package:project/view/widget/edit_profile_screen_widget/widget/text_fields_area.dart';
 import 'package:sizer/sizer.dart';
@@ -22,13 +21,14 @@ class EditProfileScreen extends StatelessWidget {
         builder: (controller) => Column(
           children: [
             Container(
-              alignment: Alignment.bottomLeft,
+              margin: EdgeInsets.only(left: 4.sp),
+              alignment: Alignment.centerLeft,
               height: 8.h,
               child: IconButton(
                 onPressed: controller.onBackBtnTap,
                 icon: Icon(
                   Icons.arrow_back_ios_new_outlined,
-                  size: 10.sp,
+                  size: 19.sp,
                   color: Colors.black,
                 ),
               ),
@@ -54,29 +54,25 @@ class EditProfileScreen extends StatelessWidget {
                                     child: Lottie.asset(AppPhotoLink.loading,
                                         height: 70, width: 70),
                                   )
-                                : HandlingDataView(
-                                    statusRequest: controller.statusRequest,
-                                    widget: Expanded(
-                                      child: SingleChildScrollView(
-                                        keyboardDismissBehavior:
-                                            ScrollViewKeyboardDismissBehavior
-                                                .onDrag,
-                                        physics: const BouncingScrollPhysics(),
-                                        child: Column(
-                                          children: [
-                                            const SizedBox(height: 16),
-                                            ImageListArea(
-                                              imageList: controller.imageList,
-                                              onImgRemove:
-                                                  controller.onImageRemove,
-                                              onAddBtnTap:
-                                                  controller.onImageAdd,
-                                            ),
-                                            TextFieldsArea(
-                                              model: controller,
-                                            ),
-                                          ],
-                                        ),
+                                : Expanded(
+                                    child: SingleChildScrollView(
+                                      keyboardDismissBehavior:
+                                          ScrollViewKeyboardDismissBehavior
+                                              .onDrag,
+                                      physics: const BouncingScrollPhysics(),
+                                      child: Column(
+                                        children: [
+                                          const SizedBox(height: 16),
+                                          ImageListArea(
+                                            imageList: controller.imageList,
+                                            onImgRemove:
+                                                controller.onImageRemove,
+                                            onAddBtnTap: controller.onImageAdd,
+                                          ),
+                                          TextFieldsArea(
+                                            model: controller,
+                                          ),
+                                        ],
                                       ),
                                     ),
                                   )

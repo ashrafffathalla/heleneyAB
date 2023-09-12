@@ -24,19 +24,22 @@ class OptionScreen extends StatelessWidget {
                 height: 8.h,
                 child: Stack(
                   children: [
-                    Align(
-                      alignment: Alignment.bottomLeft,
-                      child: IconButton(
-                        onPressed: controller.onBackBtnTap,
-                        icon: Icon(
-                          Icons.arrow_back_ios_new_outlined,
-                          size: 10.sp,
-                          color: Colors.black,
+                    Container(
+                      margin: EdgeInsets.only(left: 2.sp),
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: IconButton(
+                          onPressed: controller.onBackBtnTap,
+                          icon: Icon(
+                            Icons.arrow_back_ios_new_outlined,
+                            size: 19.sp,
+                            color: Colors.black,
+                          ),
                         ),
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(right: 7.sp, bottom: 3.sp),
+                      padding: EdgeInsets.only(right: 14.sp, bottom: 3.sp),
                       child: Align(
                         alignment: Alignment.bottomRight,
                         child: PopupMenuButton<String>(
@@ -59,7 +62,7 @@ class OptionScreen extends StatelessWidget {
                           },
                           child: Icon(
                             CupertinoIcons.gear_alt,
-                            size: 10.sp,
+                            size: 19.sp,
                             color: Colors.black,
                           ),
                         ),
@@ -98,17 +101,7 @@ class OptionScreen extends StatelessWidget {
                       child: Text('Version : 1.0.0',
                           style: Theme.of(context).textTheme.displayLarge),
                     ),
-                    SizedBox(height: 2.h),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 15.sp),
-                      child: SizedBox(
-                        width: Get.width,
-                        child: OptionButtonWidget(
-                            titleButton: 'Delete Account'.toUpperCase(),
-                            onButtonClick: controller.onDeleteAccountTap),
-                      ),
-                    ),
-                    SizedBox(height: 1.h),
+                    SizedBox(height: 5.h),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 15.sp),
                       child: SizedBox(

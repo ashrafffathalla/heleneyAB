@@ -7,6 +7,7 @@ import 'package:project/controller/edit_profile_screen_controller/edit_profile_s
 import 'package:project/core/constant/component.dart';
 import 'package:project/view/widget/edit_profile_screen_widget/interest_list.dart';
 import 'package:project/view/widget/edit_profile_screen_widget/widget/text_field_controller.dart';
+import 'package:sizer/sizer.dart';
 
 class TextFieldsArea extends StatelessWidget {
   final EditProfileScreenControllerIMP model;
@@ -266,7 +267,7 @@ class TextFieldsArea extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
             onTap: model.onSaveTap,
             child: Container(
-              height: 77,
+              height: 6.h,
               decoration: BoxDecoration(
                 color: Theme.of(context).primaryColor,
                 borderRadius: BorderRadius.circular(10),

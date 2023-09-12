@@ -22,13 +22,13 @@ class ChatScreen extends StatelessWidget {
           builder: (context, orientation, deviceType) => Column(
             children: [
               Container(
-                alignment: Alignment.bottomLeft,
+                alignment: Alignment.centerLeft,
                 height: 8.h,
                 child: IconButton(
                   onPressed: controller.goBack,
                   icon: Icon(
                     Icons.arrow_back_ios_new_outlined,
-                    size: 10.sp,
+                    size: 19.sp,
                     color: Colors.black,
                   ),
                 ),

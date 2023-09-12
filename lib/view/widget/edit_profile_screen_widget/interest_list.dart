@@ -23,8 +23,6 @@ class InterestList extends StatelessWidget {
               onTap: () {
                 model.onClipTap(e.id.toString());
               },
-              //splashColor: ColorRes.transparent,
-              //highlightColor: ColorRes.transparent,
               child: Container(
                 margin: const EdgeInsets.all(3),
                 decoration: BoxDecoration(

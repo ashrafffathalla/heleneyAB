@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project/controller/home_screen_controller/home_screen_controller.dart';
+import 'package:sizer/sizer.dart';
 
 class CustomBottomNavBarWidget extends StatelessWidget {
   const CustomBottomNavBarWidget({super.key});
@@ -10,15 +11,12 @@ class CustomBottomNavBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(Get.width * .05),
-      height: Get.width * .14,
+      margin: EdgeInsets.only(left: 10.sp, bottom: 14.sp, right: 10.sp),
+      height: 8.h,
       decoration: BoxDecoration(
         color: Theme.of(context).bottomNavigationBarTheme.backgroundColor,
         boxShadow: [
-          BoxShadow(
-            blurRadius: 30,
-            offset: const Offset(0, 10),
-          ),
+          BoxShadow(blurRadius: 30, offset: const Offset(0, 10)),
         ],
         borderRadius: BorderRadius.circular(50),
       ),

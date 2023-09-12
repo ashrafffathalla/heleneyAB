@@ -3,7 +3,6 @@
 import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
 import 'package:get/get.dart';
 import 'package:project/core/constant/component.dart';
 import 'package:project/core/constant/statusrequest.dart';
@@ -31,7 +30,6 @@ class HomeBottomNaBarWidgetControllerIMP
   MyServices myServices = Get.find();
   HomeBottomNaBarWidgetDataSource homeBottomNaBarWidgetDataSource =
       HomeBottomNaBarWidgetDataSource(Get.find());
-  SwiperController userController = SwiperController();
   StatusRequest? statusRequest;
   GetExploreScreen? getExploreScreen;
   int currentUserIndex = 0;
@@ -94,7 +92,6 @@ class HomeBottomNaBarWidgetControllerIMP
 
   @override
   void dispose() {
-    userController.dispose();
     super.dispose();
   }
 

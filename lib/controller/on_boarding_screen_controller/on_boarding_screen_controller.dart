@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:project/core/constant/component.dart';
 import 'package:project/core/routes/router.dart';
 import 'package:project/core/server/my_server.dart';
 import 'package:project/data/data_sorcue/on_boarding_datasorcue/on_boarding_data_sorcue.dart';
@@ -22,8 +23,8 @@ class OnBoardingContollerImp extends OnBoardingController {
     currentPage++;
     if (currentPage > onBoardingList.length - 1) {
       myServise.sharedPreferences.setString("step", "1");
-      Get.offAllNamed(AppRoutes.loginScreen,
-          arguments: {"long": long, "lat": lat});
+      Get.bottomSheet(EulaSheet(eulaAcceptClick: eulaAcceptClick),
+          isScrollControlled: true, isDismissible: false);
     } else {
       pageController.animateToPage(
         currentPage,
@@ -31,6 +32,12 @@ class OnBoardingContollerImp extends OnBoardingController {
         curve: Curves.easeInOut,
       );
     }
+  }
+
+  void eulaAcceptClick() async {
+    Get.back();
+    Get.offAllNamed(AppRoutes.loginScreen,
+        arguments: {"long": long, "lat": lat});
   }
 
   @override

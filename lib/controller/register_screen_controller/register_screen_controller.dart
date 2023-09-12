@@ -93,6 +93,7 @@ class RegisterScreenControllerIMP extends RegisterScreenController {
       value.user?.sendEmailVerification();
       Get.back();
       statusRequest = StatusRequest.loading;
+      Loader().lottieLoader();
       var response = await signupDataSource.signUpData(
         email: emailController.text,
         fullName: nameController.text,
@@ -102,6 +103,7 @@ class RegisterScreenControllerIMP extends RegisterScreenController {
       statusRequest = handlingData(response);
       if (statusRequest == StatusRequest.success) {
         statusRequest = StatusRequest.success;
+
         registrationUserData = RegistrationUserData.fromJson(response['data']);
         Get.snackbar("SUCCESS ", "You have register successfully !",
             snackPosition: SnackPosition.BOTTOM);
@@ -109,10 +111,12 @@ class RegisterScreenControllerIMP extends RegisterScreenController {
         if (registrationUserData != null) {
           await myServices.sharedPreferences
               .setString("registrationUser", jsonEncode(registrationUserData));
+          Get.back();
           Get.toNamed(AppRoutes.loginScreen);
         }
       } else {
         statusRequest = StatusRequest.failure;
+        Get.back();
         update();
       }
     });

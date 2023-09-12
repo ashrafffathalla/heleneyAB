@@ -90,6 +90,7 @@ class LoginScreencontrollerIMP extends LoginScreencontroller {
             print(tokenID);
           }
           statusRequest = StatusRequest.loading;
+          Loader().lottieLoader();
           var response = await signupDataSource.signUpData(
               email: emailController.text,
               fullName: "",
@@ -98,6 +99,7 @@ class LoginScreencontrollerIMP extends LoginScreencontroller {
           statusRequest = handlingData(response);
           if (statusRequest == StatusRequest.success) {
             statusRequest = StatusRequest.success;
+            Get.back();
             _registrationUserData =
                 RegistrationUserData.fromJson(response['data']);
             user__ID = _registrationUserData!.id!;
@@ -114,10 +116,12 @@ class LoginScreencontrollerIMP extends LoginScreencontroller {
               Get.toNamed(AppRoutes.homeScreen);
             }
           } else {
+            Get.back();
             statusRequest = StatusRequest.failure;
             update();
           }
         } else {
+          Get.back();
           Get.snackbar(
               "Success !!", "please Verfiry Your e-mail check your inbox",
               snackPosition: SnackPosition.BOTTOM);
@@ -205,6 +209,7 @@ class LoginScreencontrollerIMP extends LoginScreencontroller {
     required int loginType,
   }) async {
     statusRequest = StatusRequest.loading;
+    Loader().lottieLoader();
     var response = await signupDataSource.signUpData(
         email: email,
         fullName: name,
@@ -213,6 +218,7 @@ class LoginScreencontrollerIMP extends LoginScreencontroller {
     statusRequest = handlingData(response);
     if (statusRequest == StatusRequest.success) {
       statusRequest = StatusRequest.success;
+      Get.back();
       registrationUserData = RegistrationUserData.fromJson(response['data']);
       AppLink.aUserId = registrationUserData!.id!;
       user__ID = registrationUserData!.id!;
@@ -223,24 +229,26 @@ class LoginScreencontrollerIMP extends LoginScreencontroller {
           .setString("latitude", registrationUserData!.lattitude!);
       await myServices.sharedPreferences
           .setString("longitude", registrationUserData!.longitude!);
-          if (registrationUserData != null) {
-          await myServices.sharedPreferences
-              .setString("registrationUser", jsonEncode(registrationUserData));
-          if (registrationUserData?.age == null) {
-            Get.toNamed(AppRoutes.startDataUserInteryScreen,
-                arguments: {'long': long, 'lat': lat});
-          } else if (registrationUserData?.images == null ||
-              registrationUserData!.images!.isEmpty) {
-            Get.toNamed(AppRoutes.selectPhotoScreen);
-          } else {
-            Get.toNamed(AppRoutes.homeScreen);
-          }
+      if (registrationUserData != null) {
+        await myServices.sharedPreferences
+            .setString("registrationUser", jsonEncode(registrationUserData));
+        if (registrationUserData?.age == null) {
+          Get.toNamed(AppRoutes.startDataUserInteryScreen,
+              arguments: {'long': long, 'lat': lat});
+        } else if (registrationUserData?.images == null ||
+            registrationUserData!.images!.isEmpty) {
+          Get.toNamed(AppRoutes.selectPhotoScreen);
         } else {
-          Get.snackbar("ERROR !", "You have do something Wrong",
-              snackPosition: SnackPosition.BOTTOM);
+          Get.toNamed(AppRoutes.homeScreen);
         }
+      } else {
+        Get.back();
+        Get.snackbar("ERROR !", "You have do something Wrong",
+            snackPosition: SnackPosition.BOTTOM);
+      }
     } else {
       statusRequest = StatusRequest.failure;
+      Get.back();
       update();
     }
   }

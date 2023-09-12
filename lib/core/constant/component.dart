@@ -3,6 +3,8 @@
 import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -10,6 +12,7 @@ import 'package:intl/intl.dart';
 import 'package:project/core/constant/app_photo.dart';
 import 'package:project/data/models/users/register_model.dart';
 import 'package:sizer/sizer.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 String? tokenID;
 int user__ID = 0;
@@ -544,7 +547,7 @@ class _ConfirmationDialogState extends State<ConfirmationDialog>
                             .inversePrimary, */
                         onTap: widget.onNoBtnClick,
                         child: Container(
-                          height: 40,
+                          height: 7.h,
                           margin: const EdgeInsets.symmetric(horizontal: 15),
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
@@ -564,7 +567,7 @@ class _ConfirmationDialogState extends State<ConfirmationDialog>
                         onTap: widget.onYesBtnClick,
                         borderRadius: BorderRadius.circular(7),
                         child: Container(
-                          height: 40,
+                          height: 7.h,
                           margin: const EdgeInsets.symmetric(horizontal: 15),
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
@@ -1046,6 +1049,61 @@ class SubmitButton2 extends StatelessWidget {
         child: Center(
           child: Text(title, style: Theme.of(context).textTheme.bodyLarge),
         ),
+      ),
+    );
+  }
+}
+
+class EulaSheet extends StatelessWidget {
+  final VoidCallback eulaAcceptClick;
+
+  const EulaSheet({Key? key, required this.eulaAcceptClick}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final Set<Factory<OneSequenceGestureRecognizer>> gestureRecognizers = {
+      Factory(() => EagerGestureRecognizer())
+    };
+
+    UniqueKey key = UniqueKey();
+    return Container(
+      margin: EdgeInsets.only(top: AppBar().preferredSize.height * 1.5),
+      decoration: BoxDecoration(
+        color: Theme.of(context).scaffoldBackgroundColor,
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(20),
+        ),
+      ),
+      child: Stack(
+        alignment: Alignment.bottomCenter,
+        children: [
+          Container(
+            padding: EdgeInsets.only(bottom: 50 * 2),
+            child: WebView(
+              key: key,
+              initialUrl:
+                  'https://www.apple.com/legal/internet-services/itunes/dev/stdeula/',
+              javascriptMode: JavascriptMode.unrestricted,
+              gestureRecognizers: gestureRecognizers,
+            ),
+          ),
+          SafeArea(
+            top: false,
+            child: TextButton(
+              onPressed: eulaAcceptClick,
+              style: TextButton.styleFrom(
+                backgroundColor:
+                    Theme.of(context).buttonTheme.colorScheme!.onInverseSurface,
+                minimumSize: Size(double.infinity, 50),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(0),
+                ),
+              ),
+              child:
+                  Text('Accept', style: Theme.of(context).textTheme.bodyLarge),
+            ),
+          )
+        ],
       ),
     );
   }

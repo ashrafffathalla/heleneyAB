@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project/controller/user_details_screen_controller/user_details_screen_controller.dart';
-import 'package:project/core/constant/handeldataview.dart';
 import 'package:project/view/widget/user_details_screen_widget/body_sliver_box_widget.dart';
 import 'package:project/view/widget/user_details_screen_widget/image_app_bar_widget.dart';
 import 'package:project/view/widget/user_details_screen_widget/top_bar_name_widget.dart';
@@ -44,18 +43,15 @@ class CustomScreollViewWidget extends GetView<UserDetailsScreenControllerIMP> {
           ),
         ),
         SliverToBoxAdapter(
-          child: HandlingDataView(
-            statusRequest: controller.statusRequest,
-            widget: BodySilverBoxWidget(
-              userData: controller.users,
-              onChatWithTap: controller.onChatWithBtnTap,
-              distance: controller.distance,
-              onReportTap: controller.onReportTap,
-              onShareWithTap: controller.onShareProfileBtnTap,
-              like: controller.like,
-              onLikeBtnTap: controller.onLikeBtnTap,
-              userId: controller.userId,
-            ),
+          child: BodySilverBoxWidget(
+            userData: controller.users,
+            onChatWithTap: controller.onChatWithBtnTap,
+            distance: controller.distance,
+            onReportTap: controller.onReportTap,
+            onShareWithTap: controller.onShareProfileBtnTap,
+            like: controller.like,
+            onLikeBtnTap: controller.onLikeBtnTap,
+            userId: controller.userId,
           ),
         ),
       ],

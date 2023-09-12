@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:project/core/constant/component.dart';
+import 'package:project/core/constant/loader.dart';
 import 'package:project/core/constant/statusrequest.dart';
 import 'package:project/core/func/internet/handel_data.dart';
 import 'package:project/core/server/my_server.dart';
@@ -108,11 +109,13 @@ class EditProfileScreenControllerIMP extends EditProfileScreenController {
 
   void getInterestApiCall() async {
     statusRequest = StatusRequest.loading;
+    Loader().lottieLoader();
     update();
     var response = await editProfileDataSource.getInterest();
     statusRequest = handlingData(response);
     if (statusRequest == StatusRequest.success) {
       statusRequest = StatusRequest.success;
+      Get.back();
       getInterest = GetInterest.fromJson(response);
       if (getInterest != null && getInterest!.status!) {
         hobbiesList = getInterest!.data;
@@ -121,17 +124,20 @@ class EditProfileScreenControllerIMP extends EditProfileScreenController {
       }
     } else {
       statusRequest = StatusRequest.failure;
+      Get.back();
       update();
     }
   }
 
   void getEditProfileApiCall() async {
     statusRequest = StatusRequest.loading;
+    Loader().lottieLoader();
     isLoading = true;
     var response = await constantDataSource.getProfile(userID: user__ID);
     statusRequest = handlingData(response);
     if (statusRequest == StatusRequest.success) {
       statusRequest = StatusRequest.success;
+      Get.back();
       registrationUserData = RegistrationUserData.fromJson(response['data']);
       imageList = registrationUserData?.images;
       fullNameController.text = registrationUserData?.fullname ?? '';
@@ -156,6 +162,7 @@ class EditProfileScreenControllerIMP extends EditProfileScreenController {
       update();
     } else {
       statusRequest = StatusRequest.failure;
+      Get.back();
       update();
     }
   }
@@ -238,6 +245,7 @@ class EditProfileScreenControllerIMP extends EditProfileScreenController {
 
   void updateProfileApiCall() {
     statusRequest = StatusRequest.loading;
+    Loader().lottieLoader();
     update();
     editProfileDataSource
         .updateProfile(
@@ -261,6 +269,7 @@ class EditProfileScreenControllerIMP extends EditProfileScreenController {
       Get.back();
       update();
     });
+    Get.back();
     update();
   }
 }

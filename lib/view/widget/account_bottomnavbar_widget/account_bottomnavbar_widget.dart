@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project/controller/account_profile_screen_controller/acount_profile_screen_controller.dart';
-import 'package:project/core/constant/handeldataview.dart';
 import 'package:project/view/widget/account_bottomnavbar_widget/compenent/profile_images_area.dart';
 
 class AccountBottomNavBarWidget extends StatelessWidget {
@@ -15,21 +14,18 @@ class AccountBottomNavBarWidget extends StatelessWidget {
       init: AccountProfileScreenControllerIMP(),
       builder: (controller) => Column(
         children: [
-          HandlingDataView(
-            statusRequest: controller.statusRequest,
-            widget: ProfileImageArea(
-              userData: controller.userData,
-              pageController: controller.pageController,
-              onEditProfileTap: controller.onEditProfileTap,
-              onMoreBtnTap: controller.onMoreBtnTap,
-              onImageTap: controller.onImageTap,
-              onInstagramTap: controller.onInstagramTap,
-              onFacebookTap: controller.onFBTap,
-              onYoutubeTap: controller.onYoutubeTap,
-              isLoading: controller.isLoading,
-              isVerified: controller.userData?.isVerified == 2 ? true : false,
-              isSocialBtnVisible: controller.isSocialBtnVisible,
-            ),
+          ProfileImageArea(
+            userData: controller.userData,
+            pageController: controller.pageController,
+            onEditProfileTap: controller.onEditProfileTap,
+            onMoreBtnTap: controller.onMoreBtnTap,
+            onImageTap: controller.onImageTap,
+            onInstagramTap: controller.onInstagramTap,
+            onFacebookTap: controller.onFBTap,
+            onYoutubeTap: controller.onYoutubeTap,
+            isLoading: controller.isLoading,
+            isVerified: controller.userData?.isVerified == 2 ? true : false,
+            isSocialBtnVisible: controller.isSocialBtnVisible,
           ),
         ],
       ),

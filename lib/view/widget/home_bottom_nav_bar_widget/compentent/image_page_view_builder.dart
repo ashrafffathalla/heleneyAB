@@ -4,7 +4,6 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:project/controller/home_bottomnavbar_widget_controller/home_bottomnavbar_widget_controller.dart';
@@ -41,9 +40,7 @@ class ImageViewHomeBottomNavBarWidget
       init: HomeBottomNaBarWidgetControllerIMP(),
       builder: (controller) => Expanded(
         child: SizedBox(
-          child: Swiper(
-            duration: 300,
-            controller: controller.userController,
+          child: PageView.builder(
             itemCount: userData?.length ?? 0,
             itemBuilder: (context, index) {
               List<Images>? imagesProfile = userData?[index].images;

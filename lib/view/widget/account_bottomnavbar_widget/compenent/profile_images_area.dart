@@ -80,15 +80,6 @@ class ProfileImageArea extends StatelessWidget {
                               '${AppLink.aImageBaseUrl}${userData?.images?[index].image}',
                               fit: BoxFit.cover,
                               filterQuality: FilterQuality.medium,
-                              /* loadingBuilder: (context, url, progress) {
-                                    return ShimmerScreen.rectangular(
-                                      width: Get.width,
-                                      height: Get.height - 256,
-                                      shapeBorder: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(20),
-                                      ),
-                                    );
-                                  }, */
                               errorBuilder: (context, url, error) {
                                 return Container(
                                   color: Theme.of(context)
@@ -226,7 +217,7 @@ class ProfileImageArea extends StatelessWidget {
                         Expanded(
                           child: Padding(
                             padding: EdgeInsets.only(
-                                right: 3.w, left: 3.w, bottom: 12.h),
+                                right: 3.sp, left: 3.sp, bottom: 9.h),
                             child: InkWell(
                               onTap: onEditProfileTap,
                               borderRadius: BorderRadius.circular(10),
@@ -236,7 +227,7 @@ class ProfileImageArea extends StatelessWidget {
                                   filter:
                                       ImageFilter.blur(sigmaY: 15, sigmaX: 15),
                                   child: Container(
-                                    height: 77,
+                                    height: 6.h,
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(10),
                                       color: Theme.of(context)
@@ -257,7 +248,7 @@ class ProfileImageArea extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.only(right: 10, bottom: 12.h),
+                          padding: EdgeInsets.only(right: 10, bottom: 9.h),
                           child: InkWell(
                             borderRadius: BorderRadius.circular(10),
                             onTap: onMoreBtnTap,
@@ -267,8 +258,8 @@ class ProfileImageArea extends StatelessWidget {
                                 filter:
                                     ImageFilter.blur(sigmaY: 15, sigmaX: 15),
                                 child: Container(
-                                  height: 77,
-                                  width: 56,
+                                  height: 6.h,
+                                  width: 11.w,
                                   padding: const EdgeInsets.all(10),
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),

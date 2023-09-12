@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project/core/constant/component.dart';
+import 'package:project/core/constant/loader.dart';
 import 'package:project/core/constant/statusrequest.dart';
 import 'package:project/core/func/internet/handel_data.dart';
 import 'package:project/core/routes/router.dart';
@@ -68,6 +69,7 @@ class StartDataUserInteryControllerIMP extends StartDataUserInteryController {
   @override
   void getProfileApi() async {
     statusRequest = StatusRequest.loading;
+    Loader().lottieLoader();
     var response = await constantDataSource.getProfile(userID: user__ID);
     statusRequest = handlingData(response);
     if (statusRequest == StatusRequest.success) {
@@ -75,8 +77,10 @@ class StartDataUserInteryControllerIMP extends StartDataUserInteryController {
       update();
       _registrationUserData = RegistrationUserData.fromJson(response['data']);
       fullName = _registrationUserData?.fullname;
+      Get.back();
     } else {
       statusRequest = StatusRequest.failure;
+      Get.back();
       update();
     }
   }
@@ -117,6 +121,7 @@ class StartDataUserInteryControllerIMP extends StartDataUserInteryController {
       return;
     }
     statusRequest = StatusRequest.loading;
+    Loader().lottieLoader();
     await editProfileDataSource
         .updateProfile(
       fullName: fullName,
@@ -134,7 +139,9 @@ class StartDataUserInteryControllerIMP extends StartDataUserInteryController {
         .then((value) {
       statusRequest = StatusRequest.success;
       update();
+      Get.back();
       Get.toNamed(AppRoutes.selectPhotoScreen);
     });
+    Get.back();
   }
 }

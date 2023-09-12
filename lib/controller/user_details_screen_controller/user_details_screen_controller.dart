@@ -8,6 +8,7 @@ import 'package:flutter_branch_sdk/flutter_branch_sdk.dart';
 import 'package:get/get.dart';
 import 'package:project/core/constant/component.dart';
 import 'package:project/core/constant/link_api.dart';
+import 'package:project/core/constant/loader.dart';
 import 'package:project/core/constant/statusrequest.dart';
 import 'package:project/core/func/internet/handel_data.dart';
 import 'package:project/core/routes/router.dart';
@@ -201,6 +202,7 @@ class UserDetailsScreenControllerIMP extends UserDetailsScreenController {
 
   Future<void> registrationUserApiCall() async {
     statusRequest = StatusRequest.loading;
+    Loader().lottieLoader();
     var response =
         await userDetailsScreenDataSource.getProfile(userID: user__ID);
     getProfile = GetProfile.fromJson(response);
@@ -217,15 +219,20 @@ class UserDetailsScreenControllerIMP extends UserDetailsScreenController {
           false;
       like = _registrationUserData?.likedprofile?.contains("${users?.id}") ??
           false;
+      Get.back();
       update();
-    } else {}
+    } else {
+      Get.back();
+    }
   }
 
   void userDetailApiCall() async {
     statusRequest = StatusRequest.loading;
-    userProfileApiCall().then((value) {
+    Loader().lottieLoader();
+    await userProfileApiCall().then((value) {
       registrationUserApiCall();
       statusRequest = StatusRequest.success;
+      Get.back();
       update();
     });
 
@@ -245,6 +252,7 @@ class UserDetailsScreenControllerIMP extends UserDetailsScreenController {
         lon2: double.parse(users?.longitude ?? '0.0'),
       );
     } else {
+      Get.back();
       distance = 0;
     }
     update();

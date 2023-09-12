@@ -46,9 +46,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Sizer(
       builder: (context, orientation, devicetype) => GetMaterialApp(
-        onInit: () {
-          initialize();
-        },
+        onInit: initialize,
         debugShowCheckedModeBanner: false,
         theme: AppColor.customLightThem,
         darkTheme: AppColor.customDarkThem,
