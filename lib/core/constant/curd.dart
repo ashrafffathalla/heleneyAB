@@ -5,7 +5,9 @@ import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:project/core/constant/link_api.dart';
 import 'package:project/core/constant/statusrequest.dart';
-import 'package:project/core/func/internet/check_internet.dart';
+
+import 'check_internet.dart';
+
 
 class Crud {
   Future<Either<StatusRequest, Map>> postData({

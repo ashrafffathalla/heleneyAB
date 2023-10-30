@@ -1,6 +1,6 @@
 // ignore_for_file: file_names, camel_case_types, prefer_const_constructors, prefer_const_literals_to_create_immutables, non_constant_identifier_names, deprecated_member_use
 
-import 'dart:ui';
+/*import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
@@ -10,7 +10,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:project/core/constant/app_photo.dart';
-import 'package:project/data/models/users/register_model.dart';
+//import 'package:project/data/models/users/register_model.dart';
 import 'package:sizer/sizer.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -154,11 +154,10 @@ class LiveLogoWidget extends StatelessWidget {
 
 class ProfileDetailCard extends StatelessWidget {
   final VoidCallback onImageTap;
-  final RegistrationUserData? userData;
+  //final RegistrationUserData? userData;
 
   const ProfileDetailCard(
-      {Key? key, required this.userData, required this.onImageTap})
-      : super(key: key);
+     {Key? key, required this.userData, required this.onImageTap}): super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -1108,3 +1107,4 @@ class EulaSheet extends StatelessWidget {
     );
   }
 }
+*/

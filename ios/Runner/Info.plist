@@ -7,7 +7,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Heleny</string>
+	<string>Helnay</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -15,11 +15,13 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>Heleny</string>
+	<string>Helnay</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
-	<key>CFBundleShortVersionString</key>
-	<string>$(FLUTTER_BUILD_NAME)</string>
+	<key>FirebaseAppDelegateProxyEnabled</key>
+    <false/>
+	<key>NSUserTrackingUsageDescription</key>
+    	<string>This identifier will be used to deliver personalized ads to you.</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
@@ -29,12 +31,14 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.467963202794-qn3n406g1g66ki49us3schpajva0et6n</string>
+				<string>$(GOOGLE_SERVICE_REVERSED_CLIENT_ID)</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>$(FLUTTER_BUILD_NUMBER)</string>
+	<string>1.0.4</string>
+	<key>CFBundleShortVersionString</key>
+    <string>1.0.4</string>
 	<key>FLTEnableImpeller</key>
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
@@ -45,15 +49,15 @@
 		<true/>
 	</dict>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-<string>Program requires GPS to track User location for calcuate distaunce if user love to show that</string>
+<string>Program requires GPS to track User location for calculate distance if user need show that</string>
 	<key>NSLocationAlwaysUsageDescription</key>
     <string>Your location is required for get your location to other to make sure about you and benefits for you</string>
     <key>NSLocationWhenInUseUsageDescription</key>
-    <string>Your location is required for good connection with other to know you are not facke persion</string>
+    <string>Your location is required for good connection with other to know you are not fake person</string>
 	<key>NSCameraUsageDescription</key>
 	<string>the app need to access to access for camera to take save photo</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>The app need access to microphne to record audio message</string>
+	<string>The app need access to microphone to record audio message</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>The app need to access to photo library to photo to show photo in chat application</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
@@ -64,12 +68,6 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
-	<key>UISupportedInterfaceOrientations</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -77,7 +75,44 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>branch_key</key>
+        	<dict>
+        		<key>live</key>
+        		<string>key_live_hzgapNikxkSjaXtt4343RlnlyuhnBski</string>
+        		<key>test</key>
+        		<string>key_live_hzgapNikxkSjaXtt4343RlnlyuhnBski</string>
+        	</dict>
+        	<key>branch_universal_link_domains</key>
+        	<array>
+        		<string>key_live_hzgapNikxkSjaXtt4343RlnlyuhnBski</string>
+        		<string>key_live_hzgapNikxkSjaXtt4343RlnlyuhnBski</string>
+        	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+    	<key>UIApplicationSupportsIndirectInputEvents</key>
+    	<true/>
+    	<key>UIBackgroundModes</key>
+    	<array>
+    		<string>fetch</string>
+    		<string>remote-notification</string>
+    	</array>
+    	<key>UILaunchStoryboardName</key>
+    	<string>LaunchScreen</string>
+    	<key>UIMainStoryboardFile</key>
+    	<string>Main</string>
+    	<key>UISupportedInterfaceOrientations</key>
+    	<array>
+    		<string>UIInterfaceOrientationPortrait</string>
+    		<string>UIInterfaceOrientationLandscapeLeft</string>
+    		<string>UIInterfaceOrientationLandscapeRight</string>
+    	</array>
+    	<key>UISupportedInterfaceOrientations~ipad</key>
+    	<array>
+    		<string>UIInterfaceOrientationPortrait</string>
+    		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+    		<string>UIInterfaceOrientationLandscapeLeft</string>
+    		<string>UIInterfaceOrientationLandscapeRight</string>
+    	</array>
+
 </dict>
 </plist>

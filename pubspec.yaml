@@ -34,12 +34,15 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+    #_______________ mvvm structured ___________________#
+  stacked: ^3.0.0
   get: ^4.6.5
   http: ^0.13.5
   dartz: ^0.10.1
   lottie: ^2.3.2
+  google_mobile_ads: ^2.3.0
   shared_preferences: ^2.1.0
-  flutter_svg: ^2.0.0
+  flutter_svg: any
   sizer: ^2.0.15
   firebase_auth: ^4.3.0
   cloud_firestore: ^4.4.5
@@ -49,6 +52,8 @@ dependencies:
   google_sign_in: ^6.0.1
   sign_in_with_apple: ^5.0.0
   url_launcher: ^6.1.3
+  #_____________live streaming_________________#
+  agora_rtc_engine: ^5.3.0
   flutter_branch_sdk: ^6.4.0
   share_plus: ^7.1.0
   intl: ^0.18.1
@@ -61,6 +66,39 @@ dependencies:
   geolocator: ^10.0.0
   google_maps_flutter: ^2.0.11
   flutter_launcher_icons: ^0.13.1
+
+
+    #_______________ map_integration ___________________#
+  geocode: any
+  flutter_cache_manager: any
+  google_maps_cluster_manager: any
+
+
+    #_______________ ui and animation___________________#
+  flutter_spinkit: any
+  custom_marker: any
+  flutter_swiper_null_safety: any
+  carousel_slider: any
+  wakelock: any
+  dotted_border: any
+
+      #_______________ firebase ___________________#
+    #  google_mobile_ads: any
+
+    #_______________ permission ___________________#
+  permission_handler: any
+  location: any
+  app_tracking_transparency: any
+    #_______________ video and image_____________#
+  cached_network_image: any
+  file_picker: any
+    #_______________ pull_to_refresh: _____________#
+  pull_to_refresh: any
+
+    #_____________live streaming_________________#
+
+  bubbly_camera:
+    path: "CameraPlugin/camera"
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -87,23 +125,59 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/images/icons/
-    - assets/images/json/
-    - assets/images/photo/
+    - assets/images/get_started/
+    - assets/images/auth/
+    - assets/images/common/
+    - assets/icons/
 
+    # An image asset can refer to one or more resolution-specific "variants", see
+    # https://flutter.dev/assets-and-images/#resolution-aware.
+
+    # For details regarding adding assets from package dependencies, see
+    # https://flutter.dev/assets-and-images/#from-packages
+
+    # To add custom fonts to your application, add a fonts section here,
+    # in this "flutter" section. Each entry in this list should have a
+    # "family" key with the font family name, and a "fonts" key with a
+    # list giving the asset and other descriptors for the font. For
+    # example:
   fonts:
-    - family: Intel
-      fonts:
-        - asset: assets/Fonts/Inter-Regular.ttf
-        - asset: assets/Fonts/Inter-SemiBold.ttf
-          weight: 600
-    - family: Poppins
-      fonts:
-        - asset: assets/Fonts/Poppins-Bold.ttf
-        - asset: assets/Fonts/Poppins-Medium.ttf
-        - asset: assets/Fonts/Poppins-Regular.ttf
-          weight: 700
-    - family: Lobster
-      fonts:
-        - asset: assets/Fonts/Lobster-Regular.ttf
-          weight: 600
+      - family: gilroy
+        fonts:
+          - asset: assets/fonts/gilroy_reguler.ttf
+
+      - family: gilroy_bold
+        fonts:
+          - asset: assets/fonts/gilroy_bold.ttf
+
+      - family: gilroy_extra_bold
+        fonts:
+          - asset: assets/fonts/gilroy_extra_bold.otf
+
+      - family: gilroy_heavy
+        fonts:
+          - asset: assets/fonts/gilroy_heavy.ttf
+
+      - family: gilroy_light
+        fonts:
+          - asset: assets/fonts/gilroy_light.otf
+
+      - family: gilroy_medium
+        fonts:
+          - asset: assets/fonts/gilroy_medium.ttf
+
+      - family: gilroy_semibold
+        fonts:
+          - asset: assets/fonts/gilroy_semibold.ttf
+
+    #       - asset: fonts/Schyler-Italic.ttf
+    #         style: italic
+    #   - family: Trajan Pro
+    #     fonts:
+    #       - asset: fonts/TrajanPro.ttf
+    #       - asset: fonts/TrajanPro_Bold.ttf
+    #         weight: 700
+    #
+    # For details regarding fonts from package dependencies,
+    # see https://flutter.dev/custom-fonts/#from-packages
+

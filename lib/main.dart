@@ -1,14 +1,13 @@
+
 // ignore_for_file: no_leading_underscores_for_local_identifiers
 import 'dart:io';
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:project/controller/binding/initial_bindings.dart';
-import 'package:project/core/routes/app_routes.dart';
-import 'package:project/core/server/my_server.dart';
-import 'package:project/core/theme/theme_color.dart';
-import 'package:sizer/sizer.dart';
+import 'package:project/screen/get_started_screen/get_started_screen.dart';
+import 'package:project/service/my_server.dart';
+import 'package:project/utils/color_res.dart';
+import 'package:project/utils/const_res.dart';
 
 class MyHttpOverrides extends HttpOverrides {
   @override
@@ -22,10 +21,23 @@ class MyHttpOverrides extends HttpOverrides {
 MyServices myServices = Get.find();
 ThemeMode themeMode = ThemeMode.system;
 
-void main() async {
+Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initialServices();
-  await Firebase.initializeApp();
+  if (Platform.isIOS) {
+    await Firebase.initializeApp(
+      name: 'abudiyab',
+      options: const FirebaseOptions(
+        apiKey: "AIzaSyB2mmpDPtRFPDigxBvNo4PyQuo4-_ssSBY",
+        appId: "1:467963202794:ios:a20bfd81ed7185e0fa9b93",
+        messagingSenderId: "467963202794",
+        projectId: "orangeflutter-c956e",
+      ),
+    );
+  }else{
+    await Firebase.initializeApp();
+  }
+  print('H!!!!');
   runApp(const MyApp());
 }
 
@@ -44,17 +56,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Sizer(
-      builder: (context, orientation, devicetype) => GetMaterialApp(
-        onInit: initialize,
+    return GetMaterialApp(
+        title: 'Helnay',
+        //localizationsDelegates: AppLocalizations.localizationsDelegates,
+        // supportedLocales: AppLocalizations.supportedLocales,
+       // supportedLocales: [
+      //  _locale, // Spanish, no country code
+       // ],
         debugShowCheckedModeBanner: false,
-        theme: AppColor.customLightThem,
-        darkTheme: AppColor.customDarkThem,
-        themeMode: ThemeMode.system,
-        title: 'Heleny',
-        initialBinding: InitialBindings(),
-        getPages: routes,
-      ),
+        theme: ThemeData(
+        fontFamily: FontRes.regular,
+        primaryColor: ColorRes.orange,
+    ),
+    home: const GetStartedScreen(),
     );
-  }
-}
+  }}

@@ -14,7 +14,7 @@ class AppPhotoLink {
       '$photo/dating-app-concept_23-2148546499-removebg-preview.png';
   static const String whyHeleny =
       '$photo/6012ea0f8f9ac.image-removebg-preview.png';
-  static const String logoHelnay = '$photo/logo-helnay-app.png';
+  static const String logoHelnay = '$photo/rlogo.png';
   // =================== ICONS ================//
   static const String icon = 'assets/images/icons';
   static const String resetPassword = '$icon/7070628_3275432.svg';
