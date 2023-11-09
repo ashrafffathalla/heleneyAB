@@ -21,7 +21,7 @@ class RandomStreamingScreen extends StatelessWidget {
       statusBarBrightness: Brightness.light, // For iOS (dark icons)
     ));
     return ViewModelBuilder<RandomStreamingScreenViewModel>.reactive(
-      onModelReady: (model) {
+      onViewModelReady: (model) {
         model.init();
       },
       viewModelBuilder: () => RandomStreamingScreenViewModel(),

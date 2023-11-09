@@ -12,7 +12,7 @@ import '../../../utils/const_res.dart';
 class TopBarArea extends StatelessWidget {
   final VoidCallback onEndBtnTap;
   final VoidCallback onDiamondTap;
-  final VoidCallback onCameraTap;
+  final VoidCallback? onCameraTap;
   final VoidCallback onSpeakerTap;
   final bool mute;
   final LiveStreamUser? user;
@@ -21,7 +21,7 @@ class TopBarArea extends StatelessWidget {
       {Key? key,
       required this.onEndBtnTap,
       required this.onDiamondTap,
-      required this.onCameraTap,
+       this.onCameraTap,
       required this.onSpeakerTap,
       required this.mute,
       this.user})

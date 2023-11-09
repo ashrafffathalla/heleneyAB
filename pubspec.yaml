@@ -57,7 +57,7 @@ dependencies:
   flutter_branch_sdk: ^6.4.0
   share_plus: ^7.1.0
   intl: ^0.18.1
-  image_picker: ^1.0.2
+  image_picker: ^1.0.4
   video_thumbnail: ^0.5.3
   collection: ^1.17.0
   shimmer: ^3.0.0
@@ -66,14 +66,10 @@ dependencies:
   geolocator: ^10.0.0
   google_maps_flutter: ^2.0.11
   flutter_launcher_icons: ^0.13.1
-
-
     #_______________ map_integration ___________________#
   geocode: any
   flutter_cache_manager: any
   google_maps_cluster_manager: any
-
-
     #_______________ ui and animation___________________#
   flutter_spinkit: any
   custom_marker: any
@@ -86,7 +82,7 @@ dependencies:
     #  google_mobile_ads: any
 
     #_______________ permission ___________________#
-  permission_handler: any
+  permission_handler: ^11.0.1
   location: any
   app_tracking_transparency: any
     #_______________ video and image_____________#

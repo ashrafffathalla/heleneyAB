@@ -26,7 +26,7 @@ Future main() async {
   await initialServices();
   if (Platform.isIOS) {
     await Firebase.initializeApp(
-      name: 'abudiyab',
+      name: 'Helnay',
       options: const FirebaseOptions(
         apiKey: "AIzaSyB2mmpDPtRFPDigxBvNo4PyQuo4-_ssSBY",
         appId: "1:467963202794:ios:a20bfd81ed7185e0fa9b93",
@@ -37,7 +37,8 @@ Future main() async {
   }else{
     await Firebase.initializeApp();
   }
-  print('H!!!!');
+  // await Firebase.initializeApp();
+
   runApp(const MyApp());
 }
 

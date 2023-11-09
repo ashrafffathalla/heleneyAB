@@ -85,13 +85,12 @@ class LiveGridScreenViewModel extends BaseViewModel {
   }
 
   Future<void> onGoLiveTap() async {
-    Get.back();
+   Get.back();
     await [Permission.camera, Permission.microphone].request().then((value) {
       if ((value[Permission.camera] == PermissionStatus.granted &&
               value[Permission.microphone] == PermissionStatus.granted) ||
           Platform.isIOS) {
-        db
-            .collection(FirebaseConst.liveHostList)
+        db.collection(FirebaseConst.liveHostList)
             .doc(registrationUser?.identity)
             .set(LiveStreamUser(
                     userId: registrationUser?.id,
@@ -114,7 +113,7 @@ class LiveGridScreenViewModel extends BaseViewModel {
           ConstRes.aChannelId: registrationUser?.identity,
           ConstRes.aIsBroadcasting: true,
         })?.then((value) async {
-          notifyListeners();
+         notifyListeners();
         });
       } else {
         openAppSettings();

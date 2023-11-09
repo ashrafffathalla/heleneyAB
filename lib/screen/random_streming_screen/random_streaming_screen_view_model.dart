@@ -50,8 +50,8 @@ class RandomStreamingScreenViewModel extends BaseViewModel {
     Wakelock.enable();
     channelName = Get.arguments[ConstRes.aChannelId];
     isBroadcaster = Get.arguments[ConstRes.aIsBroadcasting];
-    getValueFromPrefs();
-    initializeAgora();
+    // getValueFromPrefs();
+    // initializeAgora();
   }
 
   Future<void> initializeAgora() async {
