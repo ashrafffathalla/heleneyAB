@@ -29,7 +29,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.467963202794-ui0lb3ac6phqin65bla98j563r6elfpb</string>
+				<string>om.googleusercontent.apps.467963202794-qn3n406g1g66ki49us3schpajva0et6n</string>
 			</array>
 		</dict>
 		<dict>
@@ -318,7 +318,7 @@
 	<key>branch_universal_link_domains</key>
 	<array>
 		<string>key_live_hzgapNikxkSjaXtt4343RlnlyuhnBski</string>
-        <string>key_live_hzgapNikxkSjaXtt4343RlnlyuhnBski</string>
+		<string>key_live_hzgapNikxkSjaXtt4343RlnlyuhnBski</string>
 	</array>
 </dict>
 </plist>
