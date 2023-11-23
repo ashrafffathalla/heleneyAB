@@ -86,7 +86,7 @@ dependencies:
   location: any
   app_tracking_transparency: any
     #_______________ video and image_____________#
-  cached_network_image: any
+  cached_network_image: ^3.3.0
   file_picker: any
     #_______________ pull_to_refresh: _____________#
   pull_to_refresh: any
