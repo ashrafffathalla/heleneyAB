@@ -6,7 +6,6 @@ import '../../../utils/color_res.dart';
 import '../person_streaming_screen/widgets/comment_list_area.dart';
 import 'widgets/bottom_text_field.dart';
 import 'package:project/screen/random_streming_screen/widgets/top_bar_area.dart';
-import 'package:stacked/stacked.dart';
 class RandomStreamingScreen extends StatelessWidget {
   const RandomStreamingScreen({Key? key}) : super(key: key);
 
