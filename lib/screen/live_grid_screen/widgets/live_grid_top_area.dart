@@ -59,12 +59,8 @@ class LiveGridTopArea extends StatelessWidget {
               onTap: () {
                 if (userData?.isFake != 1) {
                   userData?.canGoLive == 0
-                      ? SnackBarWidget().snackBarWidget(
-                          'Please apply for live stream from livestream dashboard from profile!')
-                      : userData?.canGoLive == 1
-                          ? SnackBarWidget().snackBarWidget(
-                              'Your Application is pending please wait')
-                          : onGoLiveTap();
+                      ? SnackBarWidget().snackBarWidget('Please apply for live stream from livestream dashboard from profile!')
+                      : userData?.canGoLive == 1 ? SnackBarWidget().snackBarWidget('Your Application is pending please wait') : onGoLiveTap();
                 } else {
                   onGoLiveTap();
                 }
