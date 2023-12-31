@@ -87,16 +87,12 @@ class LiveGridScreenViewModel extends BaseViewModel {
   Future<void> onGoLiveTap() async {
    Get.back();
     await [Permission.camera, Permission.microphone].request().then((value) {
-      if ((value[Permission.camera] == PermissionStatus.granted &&
-              value[Permission.microphone] == PermissionStatus.granted) ||
+      if ((value[Permission.camera] == PermissionStatus.granted && value[Permission.microphone] == PermissionStatus.granted) ||
           Platform.isIOS) {
-        db.collection(FirebaseConst.liveHostList)
-            .doc(registrationUser?.identity)
-            .set(LiveStreamUser(
+        db.collection(FirebaseConst.liveHostList).doc(registrationUser?.identity).set(LiveStreamUser(
                     userId: registrationUser?.id,
                     fullName: registrationUser?.fullname,
-                    userImage: registrationUser?.images != null ||
-                            registrationUser!.images!.isNotEmpty
+                    userImage: registrationUser?.images != null || registrationUser!.images!.isNotEmpty
                         ? registrationUser!.images![0].image
                         : '',
                     agoraToken: '',
