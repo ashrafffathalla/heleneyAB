@@ -88,8 +88,7 @@ class LiveGridScreenViewModel extends BaseViewModel {
    Get.back();
     await [Permission.camera, Permission.microphone].request().then((value) {
       print('1111111110');
-      if ((value[Permission.camera] == PermissionStatus.granted && value[Permission.microphone] == PermissionStatus.granted) ||
-          Platform.isIOS) {
+      if ((value[Permission.camera] == PermissionStatus.granted && value[Permission.microphone] == PermissionStatus.granted) &&Platform.isIOS) {
         print('111111111');
         db.collection(FirebaseConst.liveHostList).doc(registrationUser?.identity).set(LiveStreamUser(
                     userId: registrationUser?.id,
