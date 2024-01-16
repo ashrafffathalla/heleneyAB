@@ -88,7 +88,7 @@ class LiveGridScreenViewModel extends BaseViewModel {
    Get.back();
     await [Permission.camera, Permission.microphone].request().then((value) {
       print('1111111110');
-      if ((value[Permission.camera] == PermissionStatus.granted && value[Permission.microphone] == PermissionStatus.granted) &&Platform.isIOS) {
+      if ((value[Permission.camera] == PermissionStatus.granted && value[Permission.microphone] == PermissionStatus.granted) && Platform.isIOS) {
         print('111111111');
         db.collection(FirebaseConst.liveHostList).doc(registrationUser?.identity).set(LiveStreamUser(
                     userId: registrationUser?.id,
@@ -106,15 +106,22 @@ class LiveGridScreenViewModel extends BaseViewModel {
                     age: registrationUser?.age,
                     watchingCount: 0)
                 .toJson());
+        print('111111112');
+        print(value[Permission.microphone].toString() +"GGGG0");
         Get.to(() => const RandomStreamingScreen(), arguments: {
           ConstRes.aChannelId: registrationUser?.identity,
           ConstRes.aIsBroadcasting: true,
         })?.then((value) async {
-          print('111111112');
-         notifyListeners();
           print('111111113');
+         notifyListeners();
+          print('111111114');
         });
-      } else {
+      } else if(value[Permission.camera] == PermissionStatus.permanentlyDenied||value[Permission.microphone] == PermissionStatus.permanentlyDenied){
+         Permission.camera.request();
+         Permission.microphone.request();
+         print(value[Permission.camera].toString() +"GGGG2");
+      }else {
+        print(value[Permission.camera].toString() +"GGGG");
         openAppSettings();
       }
     });

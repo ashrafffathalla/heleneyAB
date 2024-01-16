@@ -208,7 +208,6 @@ class GetStartedScreenViewModel extends BaseViewModel {
       notifyListeners();
     });
   }
-
   void checkPermissionsScreen4() async {
     Map<permission.Permission, permission.PermissionStatus> statuses = await [
       permission.Permission.camera,
@@ -216,17 +215,18 @@ class GetStartedScreenViewModel extends BaseViewModel {
       permission.Permission.microphone,
       permission.Permission.manageExternalStorage,
     ].request();
-    if (statuses[permission.Permission.camera] ==
-            permission.PermissionStatus.denied &&
+    if (statuses[permission.Permission.camera] == permission.PermissionStatus.granted &&
         statuses[permission.Permission.storage] ==
-            permission.PermissionStatus.denied &&
+            permission.PermissionStatus.granted &&
         statuses[permission.Permission.microphone] ==
-            permission.PermissionStatus.denied &&
+            permission.PermissionStatus.granted &&
         statuses[permission.Permission.manageExternalStorage] ==
-            permission.PermissionStatus.denied) {
-      await permission.openAppSettings();
+            permission.PermissionStatus.granted) {
+      print(statuses.toString()+"GGGG");
+      await Get.off(() => const LoginDashboardScreen());
     } else {
-      Get.off(() => const LoginDashboardScreen());
+      print(statuses.toString()+"GGGG");
+       permission.openAppSettings();
     }
   }
 }

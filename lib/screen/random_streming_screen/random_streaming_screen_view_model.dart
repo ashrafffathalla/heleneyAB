@@ -47,16 +47,21 @@ class RandomStreamingScreenViewModel extends BaseViewModel {
   int maxMinutes = ConstRes.maximumMinutes * 60;
 
   void init() {
+    print("ll3");
     Wakelock.enable();
+    print("ll4");
     channelName = Get.arguments[ConstRes.aChannelId];
+    print("ll5");
     isBroadcaster = Get.arguments[ConstRes.aIsBroadcasting];
-    // getValueFromPrefs();
-    // initializeAgora();
+    print("ll6");
+    initializeAgora();
+    print("ll7");
+    getValueFromPrefs();
+    print("ll8");
   }
-
   Future<void> initializeAgora() async {
     await _initAgoraRtcEngine();
-    startWatch();
+     startWatch();
     if (isBroadcaster) {
       streamId = (await engine.createDataStream(false, false))!;
     }
@@ -150,10 +155,13 @@ class RandomStreamingScreenViewModel extends BaseViewModel {
   }
 
   Future<void> getValueFromPrefs() async {
-    PrefService.getUserData().then((value) {
+    print('ll66');
+    await PrefService.getUserData().then((value) {
       identity = value?.identity;
     });
+    print('ll77');
     initializeFireStore();
+    print('ll88');
   }
 
   void onEndVideoTap() {
@@ -251,12 +259,11 @@ class RandomStreamingScreenViewModel extends BaseViewModel {
     Get.back();
   }
 
-  void initializeFireStore() {
-    PrefService.getUserData().then((value) {
+  void initializeFireStore() async {
+    await PrefService.getUserData().then((value) {
       registrationUserData = value;
       collectionReference =
           db.collection(FirebaseConst.liveHostList).doc(value?.identity);
-
       collectionReference
           ?.withConverter(
             fromFirestore: LiveStreamUser.fromFirestore,

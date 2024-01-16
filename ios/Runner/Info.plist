@@ -8,6 +8,10 @@
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
 	<string>Helnay</string>
+	<key>NSCameraUsageDescription</key>
+    <string>$(PRODUCT_NAME) would like to use your camera For a call or live broadcast</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>For a call or live broadcast</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -60,8 +64,6 @@
 		<key>NSAllowsLocalNetworking</key>
 		<true/>
 	</dict>
-	<key>NSCameraUsageDescription</key>
-	<string>For a call or live broadcast</string>
 	<key>NSLocalNetworkUsageDescription</key>
 	<string>uses the local network to discover</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
@@ -70,13 +72,11 @@
 	<string>This app needs access to location when in the background.</string>
 	<key>NSLocationTemporaryUsageDescriptionDictionary</key>
 	<dict>
-		<key>YourPurposeKey</key>
-		<string>The example App requires temporary access to the device's precise location.</string>
+	<key>YourPurposeKey</key>
+	<string>The example App requires temporary access to the device's precise location.</string>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This app needs access to location when open.</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>For a call or live broadcast</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>App need your agree, can visit your album</string>
 	<key>NSUserTrackingUsageDescription</key>

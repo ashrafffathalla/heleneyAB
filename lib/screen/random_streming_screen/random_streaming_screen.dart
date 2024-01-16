@@ -21,7 +21,9 @@ class RandomStreamingScreen extends StatelessWidget {
     ));
     return ViewModelBuilder<RandomStreamingScreenViewModel>.reactive(
       onViewModelReady: (model) {
+        print("HH1");
         model.init();
+        print("HH2");
       },
       viewModelBuilder: () => RandomStreamingScreenViewModel(),
       builder: (context, model, child) {
