@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:io';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,7 +11,6 @@ import '../../../utils/asset_res.dart';
 import '../../../utils/color_res.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:stacked/stacked.dart';
-
 import '../../api_provider/api_provider.dart';
 import '../../common/widgets/common_fun.dart';
 import '../../common/widgets/confirmation_dialog.dart';
