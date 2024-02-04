@@ -10,16 +10,12 @@ class ConstRes {
   static int aUserId = -1;
   static const String base = 'https://helnay.com/orange/';
   static const String aBaseUrl = '${base}api/';
-  static const String authKey =
-      'AAAAbPTHzOo:APA91bGoU5lhkc8p-VbEbcGt6px4elIXRazIe92lK1_TJryQgjjpEb9kuJrtRARVn8jTVaWeHReUTYm00yRsOHxF4kqE4TCn8UJrR8i0ag0hR8_6XeBGqPxKXGhS5XeYSiIus9BqM0hX';
-
+  static const String authKey = 'AAAAbPTHzOo:APA91bGoU5lhkc8p-VbEbcGt6px4elIXRazIe92lK1_TJryQgjjpEb9kuJrtRARVn8jTVaWeHReUTYm00yRsOHxF4kqE4TCn8UJrR8i0ag0hR8_6XeBGqPxKXGhS5XeYSiIus9BqM0hX';
   /// image base url
   static const String aImageBaseUrl = '${base}public/storage/';
-
   /// api credential
   static const String aApiKeyName = 'apikey';
   static const String aApiKey = '123';
-
   /// Orange Api url
   static const String aGetProfile = '${aBaseUrl}getProfile';
   static const String aRegister = '${aBaseUrl}register';
@@ -31,36 +27,29 @@ class ConstRes {
   static const String aOnOffShowMeOnMap = '${aBaseUrl}onOffShowMeOnMap';
   static const String aOnOffNotification = '${aBaseUrl}onOffNotification';
   static const String aAddReport = '${aBaseUrl}addReport';
-  static const String aGetAdminNotification =
-      '${aBaseUrl}getAdminNotifications';
+  static const String aGetAdminNotification = '${aBaseUrl}getAdminNotifications';
   static const String aApplyForLive = '${aBaseUrl}applyForLive';
   static const String aApplyForVerification = '${aBaseUrl}applyForVerification';
   static const String aPlaceRedeemRequest = '${aBaseUrl}placeRedeemRequest';
   static const String aGetSettingData = '${aBaseUrl}getSettingData';
   static const String aSearchUsers = '${aBaseUrl}searchUsers';
-  static const String aSearchUsersForInterest =
-      '${aBaseUrl}searchUsersForInterest';
+  static const String aSearchUsersForInterest = '${aBaseUrl}searchUsersForInterest';
   static const String aUpdateSavedProfile = '${aBaseUrl}updateSavedProfile';
   static const String aUpdateLikedProfile = '${aBaseUrl}updateLikedProfile';
   static const String aUpdateBlockList = '${aBaseUrl}updateUserBlockList';
-  static const String aFetchAllLiveStreamHistory =
-      '${aBaseUrl}fetchAllLiveStreamHistory';
+  static const String aFetchAllLiveStreamHistory = '${aBaseUrl}fetchAllLiveStreamHistory';
   static const String aMinusCoinsFromWallet = '${aBaseUrl}minusCoinsFromWallet';
   static const String aStorageFileGivePath = '${aBaseUrl}storeFileGivePath';
   static const String aAddCoinsToWallet = '${aBaseUrl}addCoinsToWallet';
   static const String aGetDiamondPacks = '${aBaseUrl}getDiamondPacks';
   static const String aDeleteMyAccount = '${aBaseUrl}deleteMyAccount';
   static const String aAddLiveStreamHistory = '${aBaseUrl}addLiveStreamHistory';
-  static const String aFetchUsersByCoordinates =
-      '${aBaseUrl}fetchUsersByCordinates';
+  static const String aFetchUsersByCoordinates = '${aBaseUrl}fetchUsersByCordinates';
   static const String aGetUserDetails = '${aBaseUrl}getUserDetails';
-  static const String aFetchMyRedeemRequests =
-      '${aBaseUrl}fetchMyRedeemRequests';
-  static const String aGetExplorePageProfileList =
-      '${aBaseUrl}getExplorePageProfileList';
+  static const String aFetchMyRedeemRequests = '${aBaseUrl}fetchMyRedeemRequests';
+  static const String aGetExplorePageProfileList = '${aBaseUrl}getExplorePageProfileList';
   static const String aGetRandomProfile = '${aBaseUrl}getRandomProfile';
   static const String aNotifyLikedUser = '${aBaseUrl}notifyLikedUser';
-
   /// api keyWord
   static const String aFullName = 'fullname';
   static const String aInstagram = 'instagram';
@@ -124,9 +113,7 @@ class ConstRes {
   static const String aChannelId = 'channelId';
   static const String aTopicName = 'orange';
   static const String aDataUserId = 'data_user_id';
-
   ///_____________________________ setting data_______________________///
-
   static String currency = '';
   static String coinRate = '';
   static int minThreshold = 0;

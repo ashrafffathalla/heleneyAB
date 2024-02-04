@@ -5,6 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:project/service/agora_service.dart';
 import 'package:project/utils/const_res.dart';
 import '../../../utils/app_res.dart';
 import '../../../utils/asset_res.dart';
@@ -96,7 +97,7 @@ class LiveGridScreenViewModel extends BaseViewModel {
                     userImage: registrationUser?.images != null || registrationUser!.images!.isNotEmpty
                         ? registrationUser!.images![0].image
                         : '',
-                    agoraToken: '',
+                    agoraToken: agoraId,
                     id: DateTime.now().millisecondsSinceEpoch,
                     collectedDiamond: 0,
                     hostIdentity: registrationUser?.identity,

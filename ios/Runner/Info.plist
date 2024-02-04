@@ -8,10 +8,6 @@
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
 	<string>Helnay</string>
-	<key>NSCameraUsageDescription</key>
-    <string>$(PRODUCT_NAME) would like to use your camera For a call or live broadcast</string>
-    <key>NSMicrophoneUsageDescription</key>
-    <string>For a call or live broadcast</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -40,7 +36,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>com.helnay.helnay</string>
+			<string></string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>com.googleusercontent.apps.467963202794-ui0lb3ac6phqin65bla98j563r6elfpb</string>
@@ -64,6 +60,8 @@
 		<key>NSAllowsLocalNetworking</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>$(PRODUCT_NAME) would like to use your camera For a call or live broadcast</string>
 	<key>NSLocalNetworkUsageDescription</key>
 	<string>uses the local network to discover</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
@@ -72,11 +70,13 @@
 	<string>This app needs access to location when in the background.</string>
 	<key>NSLocationTemporaryUsageDescriptionDictionary</key>
 	<dict>
-	<key>YourPurposeKey</key>
-	<string>The example App requires temporary access to the device's precise location.</string>
+		<key>YourPurposeKey</key>
+		<string>The example App requires temporary access to the device's precise location.</string>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This app needs access to location when open.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>For a call or live broadcast</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>App need your agree, can visit your album</string>
 	<key>NSUserTrackingUsageDescription</key>
@@ -312,7 +312,6 @@
 	</dict>
 	<key>branch_universal_link_domains</key>
 	<array>
-		<string>key_live_hzgapNikxkSjaXtt4343RlnlyuhnBski</string>
 		<string>key_live_hzgapNikxkSjaXtt4343RlnlyuhnBski</string>
 	</array>
 	<key>com.apple.security.files.user-selected.read-only</key>

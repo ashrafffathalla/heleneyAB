@@ -77,7 +77,6 @@ dependencies:
   carousel_slider: any
   wakelock: any
   dotted_border: any
-
       #_______________ firebase ___________________#
     #  google_mobile_ads: any
 
@@ -176,4 +175,3 @@ flutter:
     #
     # For details regarding fonts from package dependencies,
     # see https://flutter.dev/custom-fonts/#from-packages
-
